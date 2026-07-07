@@ -1,0 +1,17 @@
+public class Jump_Game {
+
+    public boolean canJump(int[] nums) {
+        
+        int n=nums.length;
+        int max=0;
+
+        for(int i=0;i<n-1;i++){
+            if(nums[i]==0 && i==max){
+                return false;
+            }
+            max=Math.max(max,i+nums[i]);
+        }
+
+        return true;   
+    }
+}
